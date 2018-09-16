@@ -3,9 +3,7 @@
 for d in */ ; do
     # echo "$d"
     if [[ "$d" =~ ^.*-archetype ]];then
-        echo "$d"
-        cd "$d"
-        mvn clean install
-        cd ..
+        echo "#############  Installing Maven Archetype $d #############"
+        ./mvnw -f ./"$d" clean install
     fi
 done
