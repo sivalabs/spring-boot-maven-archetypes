@@ -23,6 +23,7 @@
 		<module>spring-boot-java-rest-api</module>
 		<module>spring-boot-java-rest-api-archetype</module>
 		<module>spring-boot-java-rest-api-secure</module>
+		<module>spring-boot-java-rest-api-secure-archetype</module>
 	</modules>
 
 
