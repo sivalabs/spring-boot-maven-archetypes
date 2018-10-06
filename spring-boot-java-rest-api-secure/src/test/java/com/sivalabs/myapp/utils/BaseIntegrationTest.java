@@ -2,10 +2,8 @@ package com.sivalabs.myapp.utils;
 
 import com.sivalabs.myapp.entity.User;
 import com.sivalabs.myapp.repo.UserRepository;
-import org.junit.ClassRule;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.util.TestPropertyValues;
@@ -48,14 +46,16 @@ public abstract class BaseIntegrationTest {
         userRepository.deleteAll(userRepository.findAllById(asList(existingUser.getId(), updateUser.getId())));
     }
 
-
-    @ClassRule
     public static PostgreSQLContainer postgreSQLContainer =
             (PostgreSQLContainer) new PostgreSQLContainer("postgres:10.4")
                     .withDatabaseName("appdb")
                     .withUsername("siva")
                     .withPassword("secret")
                     .withStartupTimeout(Duration.ofSeconds(600));
+
+    static {
+        postgreSQLContainer.start();
+    }
 
     static class Initializer
             implements ApplicationContextInitializer<ConfigurableApplicationContext> {
