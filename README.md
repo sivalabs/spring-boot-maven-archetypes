@@ -2,7 +2,12 @@
 
 ## How to use?
 
-Clone the repo `git clone https://github.com/sivaprasadreddy/spring-boot-maven-archetypes.git`
+The archetypes are published to Maven central. 
+You can generate projects using these archetypes using `mvn archetype:generate` and select the archetype number.
+
+### Install archetypes locally
+
+Clone the repo `git clone https://github.com/sivalabs/spring-boot-maven-archetypes.git`
 
 Run install script `./install.sh`
 
@@ -16,9 +21,9 @@ Generates basic SpringBoot application.
 
 ```
 mvn archetype:generate \
-    -B -DarchetypeGroupId=com.sivalabs.archetypes \
+    -B -DarchetypeGroupId=io.github.sivalabs.maven.archetypes \
     -DarchetypeArtifactId=spring-boot-java-basic-archetype \
-    -DarchetypeVersion=0.0.1-SNAPSHOT \
+    -DarchetypeVersion=0.0.1 \
     -DgroupId=com.mycompany \
     -DartifactId=myapp \
     -Dversion=1.0-SNAPSHOT \
@@ -37,9 +42,9 @@ Generates basic SpringBoot REST API application with the following features:
 
 ```
 mvn archetype:generate \
-    -B -DarchetypeGroupId=com.sivalabs.archetypes \
+    -B -DarchetypeGroupId=io.github.sivalabs.maven.archetypes \
     -DarchetypeArtifactId=spring-boot-java-rest-api-archetype \
-    -DarchetypeVersion=0.0.1-SNAPSHOT \
+    -DarchetypeVersion=0.0.1 \
     -DgroupId=com.mycompany \
     -DartifactId=myapp \
     -Dversion=1.0-SNAPSHOT \
@@ -60,11 +65,28 @@ Generates basic SpringBoot REST API application with the following features:
 
 ```
 mvn archetype:generate \
-    -B -DarchetypeGroupId=com.sivalabs.archetypes \
+    -B -DarchetypeGroupId=io.github.sivalabs.maven.archetypes \
     -DarchetypeArtifactId=spring-boot-java-rest-api-secure-archetype \
-    -DarchetypeVersion=0.0.1-SNAPSHOT \
+    -DarchetypeVersion=0.0.1 \
     -DgroupId=com.mycompany \
     -DartifactId=myapp \
     -Dversion=1.0-SNAPSHOT \
     -Dpackage=com.mycompany.myapp
+```
+
+## Developer Notes
+
+Procedure for deploying to Maven Central https://central.sonatype.org/pages/apache-maven.html
+
+Create or update archetypes and set version to SNAPSHOT (ex: 1.0.0-SNAPSHOT)
+
+Deploy SNAPSHOT version to https://oss.sonatype.org/content/repositories/snapshots/
+
+`spring-boot-maven-archetypes> mvn clean deploy`
+
+Deploy release version to Maven Central
+
+```
+spring-boot-maven-archetypes> mvn release:clean release:prepare
+spring-boot-maven-archetypes> mvn release:perform`
 ```
