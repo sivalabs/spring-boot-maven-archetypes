@@ -1,0 +1,9 @@
+version: '3.1'
+services:
+
+  spring-boot-kotlin-basic:
+    build: .
+    container_name: spring-boot-kotlin-basic
+    ports:
+      - "18080:8080"
+      - "18787:8787"
