@@ -1,6 +1,6 @@
 # spring-boot-maven-archetypes
 
-<h1 style="color:red">MOVED EACH ARCHETYPE TO SEPARATE REPOSITORY</h1>
+<h1>&#x1F534;MOVED EACH ARCHETYPE TO SEPARATE REPOSITORY&#x1F534;</h1>
 
 ## How to use?
 
