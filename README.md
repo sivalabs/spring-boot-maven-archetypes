@@ -1,5 +1,7 @@
 # spring-boot-maven-archetypes
 
+<h1 style="color:red">MOVED EACH ARCHETYPE TO SEPARATE REPOSITORY</h1>
+
 ## How to use?
 
 The archetypes are published to Maven central. 
